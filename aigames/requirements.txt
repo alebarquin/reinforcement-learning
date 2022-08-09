@@ -1,8 +1,9 @@
-tensorflow==2.5.0
+tensorflow
 kaggle_environments
-gym==0.21.0
+gym
 stable-baselines[mpi]==2.10.2
 pandas
 numpy
 matplotlib
 ipykernel
+pygame
