@@ -1,0 +1,8 @@
+tensorflow==2.5.0
+kaggle_environments
+gym==0.21.0
+stable-baselines[mpi]==2.10.2
+pandas
+numpy
+matplotlib
+ipykernel
