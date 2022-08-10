@@ -4,7 +4,7 @@ from environment import Environment
 # Defining the parameters
 gamma = 0.9
 alpha = 0.75
-nEpochs = 1000
+nEpochs = 10000
 
 # Environment and Q-table initialization
 env = Environment()
