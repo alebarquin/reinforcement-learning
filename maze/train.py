@@ -1,4 +1,3 @@
-from curses import start_color
 import numpy as np
 from environment import Environment
 
@@ -23,7 +22,7 @@ def maximum(qvalues):
     inx = 0
     maxQValue = -np.inf
     for i in range(len(qvalues)):
-        if qvalues[i] > maxQValue and qvalues != 0:
+        if qvalues[i] > maxQValue and qvalues[i] != 0:
             maxQValue = qvalues[i]
             inx = i
     
