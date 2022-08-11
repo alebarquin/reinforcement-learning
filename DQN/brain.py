@@ -35,6 +35,6 @@ class Brain():
           )
 
           self.model.compile(
-               optimizer = Adam(lr = self.LearningRate),
+               optimizer = Adam(learning_rate = self.LearningRate),
                loss = 'mean_squared_error'
           )

@@ -1,4 +1,12 @@
+# tensorflow-gpu==2.0.0
+tensorflow-gpu
+# tensorflow
+keras
+h5py
+# tensorflow==1.14
+# keras==2.2.4
+# h5py==2.9
 gym
 numpy
 matplotlib
-keras
+pygame

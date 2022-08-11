@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Setting the parameters
 learningRate = 0.001
-maxMemory = 5000
+maxMemory = 50000 # Low memory could lead the model to forget how to play!
 gamma = 0.9
 batchSize = 32
 
@@ -16,7 +16,7 @@ epsilon = 1.
 epsilonDecayRate = 0.995
 
 # Initializing the Environment, the Brain and the Experience Replay Memory
-env = gym.make('MountainCar-v0')
+env = gym.make('MountainCar-v0', render_mode='human')
 brain = Brain(
      nInput = 2, # I have position and velocity as input arguments
      nOutput = 3, # Left, right or staying still
@@ -57,7 +57,7 @@ while True:
           
           # Updating the Environment
           nextState[0], reward, gameOver, _ = env.step(action)
-          env.render()
+          # env.render()
 
           totalReward += reward
 
