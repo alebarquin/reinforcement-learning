@@ -75,3 +75,41 @@ while True:
           nextState = np.append(nextState, frame, axis = 3)
           # Since I've appended a new frame, now nextState is greater than 4, so I need to delete the first one
           nextState = np.delete(nextState, 0, axis = 3)
+
+          # Remembering new experience and training the AI
+          dqn.remember(
+               transition = [currentState, action, reward, nextState],
+               gameOver = gameOver
+          )
+
+          inputs, targets = dqn.getBatch(model, batchSize)
+          model.train_on_batch(inputs, targets)
+
+          # Updating the score and current state
+          if env.collected:
+               nCollected += 1
+          
+          currentState = nextState
+
+     # Updating the epsilon and saving the model
+     epsilon -= epsilonDecayRate
+     epsilon = max(epsilon, minEpsilon) # Make sure it's not lower than minEpsilon
+
+     if nCollected > maxNCollected and nCollected > 2:
+          maxNCollected = nCollected
+          model.save(filepathToSave)
+     
+     # Displaying the results
+     totNCollected += nCollected
+     nCollected = 0
+
+     if epoch % 100 == 0 and epoch != 0:
+          scores.append(totNCollected / 100)
+          totNCollected = 0
+
+          plt.plot(scores)
+          plt.xlabel('Epoch / 100')
+          plt.ylabel('Average apples collected')
+          plt.show()
+
+     print('Epoch: ' + str(epoch) + ' Current best: ' + str(maxNCollected) + ' Epsilon: {:.5f}'.format(epsilon))
