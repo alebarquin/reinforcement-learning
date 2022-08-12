@@ -36,5 +36,5 @@ class Brain():
 
           self.model.compile(
                optimizer = Adam(learning_rate = self.LearningRate),
-               loss = 'mean_squared_error'
+               loss = 'mse'
           )

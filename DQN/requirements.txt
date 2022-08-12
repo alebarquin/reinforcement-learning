@@ -1,5 +1,6 @@
 # tensorflow-gpu==2.0.0
-tensorflow-gpu
+# tensorflow-gpu
+tf-nightly-gpu
 # tensorflow
 keras
 h5py

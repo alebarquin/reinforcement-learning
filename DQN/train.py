@@ -5,14 +5,18 @@ import gym
 import numpy as np
 import matplotlib.pyplot as plt
 
+# import os
+# os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
+# os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
 # Setting the parameters
 learningRate = 0.001
-maxMemory = 50000 # Low memory could lead the model to forget how to play!
+maxMemory = 5000 # Low memory could lead the model to forget how to play!
 gamma = 0.9
-batchSize = 32
+batchSize = 2
 
 # Adaptative Epsilon greedy model!
-epsilon = 1.
+epsilon = 1
 epsilonDecayRate = 0.995
 
 # Initializing the Environment, the Brain and the Experience Replay Memory
