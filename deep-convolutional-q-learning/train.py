@@ -6,6 +6,10 @@ from dqn import DQN
 import numpy as np
 import matplotlib.pyplot as plt
 
+# import os
+# os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   
+# os.environ["CUDA_VISIBLE_DEVICES"]="1"
+
 # Defining the parameters
 learningRate = 0.0001
 maxMemory = 60000
