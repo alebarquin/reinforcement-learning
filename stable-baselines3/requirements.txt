@@ -1,2 +1,4 @@
 stable-baselines3[extra]
 pyglet
+numpy
+opencv-python
