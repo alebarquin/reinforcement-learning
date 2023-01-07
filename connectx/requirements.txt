@@ -1,4 +1,4 @@
-tensorflow
+tensorflow-gpu
 kaggle_environments
 gym
 stable-baselines[mpi]==2.10.2
